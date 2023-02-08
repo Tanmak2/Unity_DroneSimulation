@@ -80,6 +80,7 @@ public class DroneController : MonoBehaviour
             if(Input.GetKey(KeyCode.R) && !ani.GetBool("isHover")){
                 if(transform.position.y <= 0.5f){
                     rigid.velocity = Vector3.zero;
+                    transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
                     ani.SetBool("isTakeOff",false);
                     ani.SetBool("isLanding",true);
                     isStandBy = false;
